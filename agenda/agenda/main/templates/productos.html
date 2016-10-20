@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Productos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+</head>
+<body>
+	<a href="{% url 'home' %}">Home</a>
+	<H1>Estos son los productos</H1>
+
+	{% for producto in productos %}
+		<ul class="list-inline">
+			<li>{{producto.nombre}}</li>
+			<li>{{producto.desc}}</li>
+			<li>{{producto.precio}}</li>
+		</ul>
+	{%endfor%}
+</body>
+</html>

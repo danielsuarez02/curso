@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{%block titulo%} Home {%endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<H1>Home</H1>
+{%block content%}
+{%endblock content%}
+
+<a href="{% url 'productos' %}">Productos</a>
+<a href="{% url 'foro' %}">Foro</a>
+</body>
+</html>

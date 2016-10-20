@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{%block titulo%}
+	El Blog
+{%endblock titulo%}
+
+{%block content%}
+
+
+
+<div id="Formulario">
+
+	<form method="post" action=".">
+		{%csrf_token%}
+		{{form.as_p}}
+		<input class="btn btn-lg btn-info" type="submit" value="Guardar">
+	</form>
+
+</div>
+
+{%endblock content%}
