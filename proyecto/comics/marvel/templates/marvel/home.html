@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	<section>
+
+		{%if personaje%}
+			<img style="max-width: 200px" src="{{link}}">
+			<h2>La descripcion del personaje: {{heroe}}</h2>
+			<h3>{{personaje}}</h3>
+
+			
+				
+		{% endif %}
+		<form action="." method="post">
+			<label>
+				Escribe el nombre de tu super favorito:
+				<input type="text" name="heroe">
+				<select name="heroe">
+					<option value="">selecciona un personaje</option>
+					{% for heroe in historial %}
+						<option value="{{heroe.nombre}}">{{heroe.nombre}}</option>
+					{%endfor%}
+				</select>
+				<input type="submit" value="Pedir">
+			</label>
+			{%csrf_token%}
+		</form>
+	</section>
+{%endblock content%}

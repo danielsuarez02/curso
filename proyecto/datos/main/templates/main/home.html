@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	<section>
+		<h2>Bienvenidos a Cines</h2>
+		<a href="{%url 'main:home'%}">Home</a>
+
+		<form action="." method="post">
+		{{cine}}
+			<label>
+				<select name="cineForm">
+					<option value="">selecciona un Cine</option>
+					{% for cinetemp in cines %}
+						<option value="{{cinetemp.id}}" 
+						{%if cinetemp.id == cine %} 
+								selected
+						{%endif%}
+						>{{cinetemp.nombre}}</option>
+					{%endfor%}
+				</select>
+				<input type="submit" value="Pedir">
+			</label>
+			{%csrf_token%}
+		</form>
+
+			<form action="." method="post">
+				<label>
+					<select name="peliculaForm">
+						<option value="">selecciona una pelicula</option>
+						{% for peliculatemp in peliculas %}
+							<option value="{{peliculatemp.id}}">{{peliculatemp.titulo}}</option>
+						{%endfor%}
+					</select>
+					<input type="submit" value="Pedir">
+				</label>
+				{%csrf_token%}
+			</form>
+
+	</section>
+{%endblock content%}

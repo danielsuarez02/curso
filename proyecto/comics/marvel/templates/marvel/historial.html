@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	{% for heroe in historial %}
+		<ul class="list-inline">
+			<li>{{heroe.nombre}}</li>
+			<li>{{heroe.desc}}</li>
+			<li><img style="max-width: 200px" src="{{heroe.img}}"></li>
+		</ul>
+	{%endfor%}
+{%endblock content%}

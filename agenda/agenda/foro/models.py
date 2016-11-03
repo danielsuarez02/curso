@@ -2,7 +2,7 @@ from django.db import models
 from datetime import date
 
 class Post(models.Model):
-	titulo=models.CharField(max_length=140,)
+	titulo=models.CharField(max_length=140)
 	desc=models.TextField(blank=True,null=True)
 	autor=models.CharField(max_length=50,blank=True,null=True)
 	categorias=models.CharField(max_length=140,blank=True,null=True)

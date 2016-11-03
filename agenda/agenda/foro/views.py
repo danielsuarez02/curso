@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,View
 from .models import Post
-from .forms import PostForm
+from .form import PostForm
 
 class Foro(TemplateView):
 	template_name="foro.html"
